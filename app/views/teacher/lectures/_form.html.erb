@@ -1,0 +1,12 @@
+<%= simple_form_for(@lecture, url: teacher_course_lecture_url(@lecture.course, @lecture)) do |f| %>
+
+  <div class="form-inputs">
+    <%= f.association :course %>
+    <%= f.input :name %>
+    <%= f.input :content %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

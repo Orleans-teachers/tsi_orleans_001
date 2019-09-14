@@ -1,0 +1,8 @@
+<h1><%= @lecture.course.name %></h1>
+
+<h2><%= @lecture.name %></h2>
+
+<% if @lecture.content %>
+  <p><%= link_to "content", asset_path(@lecture.content), target: "_blank" %></p>
+<% end %>
+

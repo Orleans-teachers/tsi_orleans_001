@@ -1,0 +1,39 @@
+<h1>Courses</h1>
+
+<ul>
+  <% @courses.each do |course| %>
+    <li>
+      <p>
+        <h2><%= link_to course.name, teacher_course_path(course) %></h2>
+        <% if course.lectures.any? %>
+          <h3>Lectures</h3>
+          <ol>
+            <% course.lectures.each do |lecture| %>
+              <li>
+                <% if lecture.content %>
+                  <%= link_to lecture.name, asset_path(lecture.content), target: "_blank" %>
+                <% else %>
+                  <%= lecture.name %>
+                <% end %>
+              </li>
+            <% end %>
+          </ol>
+        <% end %>
+        <% if course.lectures.any? %>
+          <h3>Lectures</h3>
+          <ol>
+            <% course.lectures.each do |lecture| %>
+              <li>
+                <% if lecture.content %>
+                  <%= link_to lecture.name, asset_path(lecture.content), target: "_blank" %>
+                <% else %>
+                  <%= lecture.name %>
+                <% end %>
+              </li>
+            <% end %>
+          </ol>
+        <% end %>
+      </p>
+    </li>
+  <% end %>
+</ul>

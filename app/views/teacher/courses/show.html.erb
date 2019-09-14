@@ -1,0 +1,12 @@
+<h1><%= @course.name %></h1>
+
+<% if @course.lectures.any? %>
+  <h2>Lectures</h2>
+  <% @course.lectures.each do |lecture| %>
+    <ol>
+      <%= link_to lecture.name, teacher_course_lecture_path(@course, lecture) %>
+    </ol>
+  <% end %>
+<% else %>
+  <p>coming soon page</p>
+<% end %>

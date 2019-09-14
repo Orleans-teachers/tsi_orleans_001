@@ -1,0 +1,6 @@
+<h1>Editing Lecture</h1>
+
+<%= render 'form', course: @lecture.course, lecture: @lecture %>
+
+<%= link_to 'Show', teacher_course_lecture_path(@lecture.course, @lecture) %> |
+<%= link_to 'Back', teacher_course_lectures_path(@lecture.course) %>

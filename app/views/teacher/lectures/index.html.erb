@@ -1,0 +1,12 @@
+<h1><%= @lectures.first.course.name %></h1>
+
+<h2>Lectures</h2>
+<ul>
+  <% @lectures.each do |lecture| %>
+    <li>
+      <p>
+        <%= link_to lecture.name, teacher_course_lecture_path(lecture.course, lecture) %>
+      </p>
+    </li>
+  <% end %>
+</ul>
